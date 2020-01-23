@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        
+        var kor = Number(prompt('국어점수를 입력하세요.'));
+        var eng = Number(prompt('영어점수를 입력하세요.'));
+        var math = Number(prompt('수학점수를 입력하세요.'));
+
+        var avg = Math.round( (kor + eng + math ) / 3 *100) / 100;
+        console.log(avg);
+        var tmp = (avg == 100) ? avg -1 : avg;  // 평균이 100점을 넘어갈경우 
+        switch (Math.trunc(tmp / 10)) {
+            case 9:
+                document.write('<h2>수</h2>');
+                break;
+            case 8:
+                document.write('<h2>우</h2>');
+                break;
+            case 7:
+                document.write('<h2>미</h2>');
+                break;
+            case 6:
+                document.write('<h2>양</h2>');
+                break;
+            case 5: case 4: case 3: case 2: case 1: case 0:
+                document.write('<h2>가</h2>');
+                break;
+        
+            default:
+            document.write('<h2>뭥미</h2>');
+                break;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

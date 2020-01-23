@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function sumAll() {
+            result = 0;
+            
+            for (let index = 0; index < arguments.length; index++) {
+                result += arguments[index];
+            }
+            return result;
+             
+        }
+
+        var sum = sumAll(1,2);  // result : 3
+        document.write('sumAll(1,2) = ' + sum + '<br>');
+        sum = sumAll(1);        // result : 1
+        document.write('sumAll(1) = ' + sum + '<br>');
+        sum = sumAll(1,2,3,4,5,6,7,8,9,10); // result : 55
+        document.write('sumAll(1,2,3,4,5,6,7,8,9,10) = ' + sum + '<br>');
+        sum = sumAll();
+        document.write('sumAll() = ' + sum + '<br>');
+
+        function sumAll() {};   //  같은 함수가 선언되면 맨 마지막에 선언된 함수로 덮어쓴다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

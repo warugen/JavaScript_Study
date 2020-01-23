@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        table{
+            width: 250px;
+            margin: 0 auto;
+            border: 1px solid skyblue;
+            text-align: center;
+        }
+        input[type:'text'] {
+            width: 200px;
+        }
+    </style>
+    <script>
+        function chk() {
+            if (frm.name.value.length < 2) {
+                alert('이름은 2글자 이상 입력해 주세요.');
+                frm.name.focus();
+                return false;
+            } else if (isNaN(frm.age.value) ||Number(frm.age.value) < 0 || Number(frm.age.value) >120){
+                alert('나이는 0~120 까지 입력해주세요.');
+                frm.age.focus();
+                return false;
+            } //else if (frm.address.value == false) {
+              else if (frm.address.value === '') { // === 일치연산자(값, 타입)
+
+                alert('주소는 1글자 이상 입력해주세요.');
+                frm.address.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="frm" onsubmit="return chk()" >
+        <table>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="name" id="name" placeholder="이름은 2글자 이상"></td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td><input type="text" name="age" id="age" placeholder="나이는 0~120까지"></td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td><input type="text" name="address" id="address" placeholder="주소는 입력만"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="입력""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

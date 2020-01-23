@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var imgs = ['img/img01.png', 'img/img02.png', 'img/img03.png', 
+                    'img/img01.png', 'img/img02.png', 'img/img03.png',
+                    'img/img01.png', 'img/img02.png', 'img/img03.png','img/img01.png'];
+        var col = ['yellow', 'blue', 'green'];
+        var pick = 0;
+
+        var id = setInterval(function() {
+            document.write(new Date() + '<br>');
+            document.body.style.backgroundImage='url("'+imgs[pick%3]+'")';
+            document.body.style.backgroundSize ='100%';
+            document.body.style.color= col[pick%3];
+            pick++;
+
+        }, 1000);
+
+        setTimeout(function() {
+            clearInterval(id);
+        }, 10000);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

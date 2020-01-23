@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        do {
+            var kor = prompt('국어점수를 입력하세요.','80');
+            var Nkor = Number(kor);
+            console.log(Nkor);
+            if (isNaN(Nkor)){
+                // 점수이외의 값 체크
+                alert('문자말고 점수를 입력하세요.');
+                
+            } 
+            console.log(Nkor);
+            if (Nkor < 0 || Nkor > 100) {
+                // 점수의 범위 체크
+                alert('입력 점수범위는 0에서 100사이 입니다. 다시 입력해 주세요.');
+                
+            }
+            break;
+        } while (true);
+        do {
+            var eng = prompt('영어점수를 입력하세요.','80');
+            var Neng = Number(eng);
+            if (isNaN(Neng)){
+                // 점수이외의 값 체크
+                alert('문자말고 점수를 입력하세요.');
+                
+            } 
+            console.log(Neng);
+            if (Neng < 0 || Neng > 100) {
+                // 점수의 범위 체크
+                alert('입력 점수범위는 0에서 100사이 입니다. 다시 입력해 주세요.');
+                
+            }
+            break;
+        } while (true);
+        
+        var sum = Nkor + Neng;
+        document.write('국어 : ' + Nkor + '점 <br>');
+        document.write('영어 : ' + Nkor + '점 <br>');
+        document.write('합계 : ' + sum + ' 점<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var id = setInterval(function() {
+            document.write(new Date() + '<br>');
+        }, 1000);// 일정시간마다 콜백함수 실행
+        
+        setTimeout(function() {
+            clearInterval(id);
+        }, 10000);               // 10초후 타이머 중지
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

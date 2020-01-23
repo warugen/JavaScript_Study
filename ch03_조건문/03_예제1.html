@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        while (isNaN(grade) || grade < 0 || grade >4.5) {
+            var grade = Number(prompt('0부터 4.5사이의 학점을 입력하세요.'));
+        }
+        console.log(grade);
+/*        if(grade >=4.0 && grade <=4.5) {
+            document.write('<h1>A학점이군요.</h1>');
+        } else if (3.0 <= grade && grade <4.0) {
+            document.write('<h1>B학점이군요.</h1>');
+        } else if (2.0 <= grade && grade <3.0) {
+            document.write('<h1>C학점이군요.</h1>');
+        } else if (0 <= grade && grade <2.0) {
+            document.write('<h1>분발하세요.</h1>');
+        }
+*/
+        switch (Math.trunc(grade/0.5)) {
+            case 9: case 8:
+                document.write('<h1>A학점이군요.</h1>');
+                break;
+            case 7: case 6:
+                document.write('<h1>B학점이군요.</h1>');
+                break;
+            case 5: case 4:
+                document.write('<h1>C학점이군요.</h1>');
+                break;
+            case 0: case 1: case 2: case 3:
+                document.write('<h1>분발하세요.</h1>');
+                break;
+            default:
+                document.write('<h1>학점을 제대로 입력 안했네요.</h1>');
+                break;
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

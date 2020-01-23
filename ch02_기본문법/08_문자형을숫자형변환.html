@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- prompt 함수를 이용하여 국어, 영어점수를 입력받아
+        국어, 영어, 합계를 document.write를 이용하여 출력
+    -->
+    <script>
+        //kor = prompt('국어 점수를 입력해 주세요','80');
+        document.write('<h2>Number함수이용</h2>');
+        var str = '100점';
+        var i = Number(str);
+        document.write('str = ' + str + ', str의 타입 = ' + typeof(str)+'<br>');
+        document.write('i = ' + i + ', i의 타입 = ' + typeof(i)+'<br>');
+        if (isNaN(i)) { // i가 NaN이면 true, 아니면 false
+            document.write('수를 입력하란 말이야');
+        } else {
+            document.write('수를 입력했네');
+        }
+
+        document.write('<h2>ParseInt함수이용</h2>');
+        var str = '100점';
+        var i = parseInt(str);
+        document.write('str = ' + str + ', str의 타입 = ' + typeof(str)+'<br>');
+        document.write('i = ' + i + ', i의 타입 = ' + typeof(i)+'<br>');
+
+        if (isNaN(i)) { // i가 NaN이면 true, 아니면 false
+            document.write('수를 입력하란 말이야');
+        } else {
+            document.write('수를 입력했네');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

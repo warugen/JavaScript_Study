@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // pow(2,3) -> 2의 3승
+        var i = Number(prompt('i값은?'));
+        var j = Number(prompt('j값은?'));
+        document.write(i+'의 '+j+'승은 '+pow(i,j));
+
+        function pow(x,y){
+            var result = 1;
+            for(var i = 1; i <= y; i++){
+                result *=  x;
+            }
+            return result;
+        };
+
+        // 선언적 함수로 한다면...
+        /*
+        var pow = function (x,y){
+            var result = 1;
+            for(var i = 1; i <= y; i++){
+                result *=  x;
+            }
+            return result;
+        };
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

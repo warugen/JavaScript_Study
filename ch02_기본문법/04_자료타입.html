@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str;
+        document.write('str의 타입은 ' + typeof(str)+' , -내용 : '+str+'<br>');
+        str = 10;
+        document.write('str의 타입은 ' + typeof(str)+' , -내용 : '+str+'<br>');
+        str = '안녕하세요.';
+        document.write('str의 타입은 ' + typeof(str)+' , -내용 : '+str+'<br>');
+        str = true;
+        document.write('str의 타입은 ' + typeof(str)+' , -내용 : '+str+'<br>');
+        str = function chk() {alert('경고창?');}; // 경고창이 나오지는 않는다.
+        document.write('str의 타입은 ' + typeof(str)+' , -내용 : '+str+'<br>');
+        str = { 'name' : '홍길동', 'age': 32, 'address' : '서울시' };
+        document.write('str의 타입은 ' + typeof(str)+' , -내용 : '+str+'<br>');
+        str = [1, 'string', true];
+        str.push(2);
+        document.write('str의 타입은 ' + typeof(str)+' , -내용 : '+str+' , 길이 : '+str.length+'<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

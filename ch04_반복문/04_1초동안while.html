@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // while문이 1초동안 몇번 수행하는지 수행횟수를 출력
+        var cnt = 0;
+        var startTime = new Date().getTime();   // 현재의 밀리세컨을 가져온다.
+        while (new Date().getTime() < startTime + 1000) {
+            cnt++;
+        }
+        // 자릿수마다 콤마(,) 찍어주기
+        var strCnt = String(cnt);
+        var srtlen = strCnt.length;
+        var mod = srtlen % 3;
+        for ( var idx = 0; idx < strCnt.length; idx++){
+            if(mod == 0) { // 3으로 나눈 나머지가 0인경우
+                mod = 3;
+                if(idx !=strCnt.length-1 && idx !=0){
+                    // 현재 idx가 문자열의 첫번째인경우와 마지막일경우가 아니면 콤마(,)를 찍어준다.
+                    document.write(',');
+                }
+            }
+            document.write(strCnt[idx]);
+            mod--;
+        }
+        document.write(strCnt + '번 수행');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
