@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+        }
+        table{
+            width: 360px;
+            border: 2px solid #385d81;
+            text-align: center;
+        }
+
+        th input {
+            border: 1px solid #385d81;
+            border-radius: 15px;
+            background-color: #385d81;
+        }
+
+        input{
+            border: 2px solid #385d81;
+            padding: 15px;
+        }
+        td, th {
+            padding: 15px;
+        }
+        th input{
+            width: 100px;
+            height: 50px;
+            font-weight: bold;
+            color: white;
+            
+        }
+    </style>
+    <script>
+        function register() {
+            // 메일형식 체크
+            var mail = frm.mail.value;
+            
+            if(mail.length == 0) {
+                alert('메일주소를 입력하세요.')
+                frm.mail.focus();
+                return false;
+            } else if (mail.indexOf('@') != mail.lastIndexOf('@')) {
+                alert('@는 하나만 들어가야합니다.');
+                frm.mail.focus();
+                return false;
+            } else if (mail.lastIndexOf('@') > mail.lastIndexOf('.')){
+                alert('@이 .보다 앞에 와야합니다.');
+                frm.mail.focus();
+                return false;
+            } else if (mail.lastIndexOf('@') == 0 || mail.lastIndexOf('@') == mail.length-1 ) {
+                alert('@은 알파벳과 알파벳 사이에 와야합니다.');
+                frm.mail.focus();
+                return false;
+            }
+
+            // 비밀번호 체크
+            var patternSpe = /[~!@#$%^&*()_+|<>?:{}]/;
+            var patternNum = /[0-9]/;
+            var patternEng = /[a-zA-Z]/;
+
+            var pw = frm.pw.value;
+            var pwchk = frm.pwchk.value;
+            
+            if (pw.length < 4 || !patternSpe.test(pw) || !patternNum.test(pw) || !patternEng.test(pw)) {
+                // 비밀번호pw 체크
+                alert('비밀번호는 4글자 이상 영어/숫자/특수문자가 들어가야 합니다.');
+                frm.pw.value="";
+                frm.pw.focus();
+                return false;
+
+            } else if (pwchk.length < 4 || !patternSpe.test(pwchk) || !patternNum.test(pwchk) || !patternEng.test(pwchk)) {
+                // 비밀번호pwchk 체크
+                alert('비밀번호는 4글자 이상 영어/숫자/특수문자가 들어가야 합니다.');
+                frm.pwchk.value="";
+                frm.pw.focus();
+                return false;
+            } else if (pw != pwchk) {   
+                // 비밀번호 일치 체크
+                alert('비밀번호가 일치하지 않습니다. 다시 입력해주세요.');
+                frm.pw.value="";
+                frm.pwchk.value="";
+                frm.pw.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="frm" onsubmit="return register()">
+        <table>
+            <tr>
+                <td><label for="">메 일</label></td>
+                <td><input type="text" name="mail" placeholder="메일형식에 맞추세요"></td>
+            </tr>
+            <tr>
+                <td><label for="">비밀번호</label></td>
+                <td><input type="password" name="pw" ></td>
+            </tr>
+            <tr>
+                <td><label for="">비밀번호</label></td>
+                <td><input type="password" name="pwchk" ></td>
+            </tr>
+            <tr>
+                <th colspan="3">
+                    <input type="submit" value="회원가입">
+                    <input type="reset" value="취소">
+                    <input type="button" value="로그인" onclick="location.href='01_Number객체.html'" >
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
