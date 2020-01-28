@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var array = ['사과', 273, true, function(){}, [1,2]];
+        document.write(array[0]+'<br>');   // array를 access하는 key는 index
+        //document.write(typeof(array));
+        // 객체는 {}로 만들고 배열은 []로 만든다.
+        var object = {
+            '제품명':'7D건조망고',
+            '유형':'당절임',
+            '성분':'망고, 설탕, 치자황색소',
+            '원산지':'필리핀',
+            가격:7000,              // ''을 넣어도되고 안넣어도 되는데 요즘은 넣어주는 추세
+            상태:true
+        };
+        document.write(object.제품명 + ' ' + object.성분 + ' ' + object.유형 + '<br>');
+        document.write(object['제품명'] + ' ' + object['가격'] + ' ' + object['원산지'] + '<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var student = {
+            name : '홍길동',
+            kor : 92,
+            mat : 100,
+            eng : 100,
+            sci : 98,
+            output : '객체안의 output'
+        };
+
+        var output = '';
+        /*
+        output += '이름은 '+ student.name + '<br>';
+        output += '국어 '+ student['kor'] + '<br>';
+        output += '수학 '+ student.mat + '<br>';
+        output += '영어 '+ student.eng + '<br>';
+        output += '과학 '+ student.sci + '<br>';
+        */
+        with(student) { //student 생략가능
+            // window.을 생략하면 student안의 output에 저장한다
+            window.output += '이름은 '+ name + '<br>';
+            window.output += '국어 '+ kor + '<br>';
+            window.output += '수학 '+ mat + '<br>';
+            window.output += '영어 '+ eng + '<br>';
+            window.output += '과학 '+ sci + '<br>';
+            window.output += 'output '+ output + '<br>';
+        }
+        document.write(output);
+        // student객체안에 'name'속성이 있으면 true, 없으면 false를 반환
+        document.write('name' in student);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
