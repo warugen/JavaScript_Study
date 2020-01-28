@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var student = {
+            name : '유인나'
+        };
+        student.name = '강인나';    // 같은 이름의 객체가 있으면 덮어쓴다.
+        student.age = 39;           // 기존 객체에 새로운 속성을 추가
+        student.kor = 90;
+        student.hobby = '프로그래밍';
+        student.toString = function() {
+            var output = ''
+            for(var key in this) {
+                if(key != 'toString'){
+                    output += key + ' : ' + this[key] + '<br>';
+                }
+            }
+            return output;
+        };
+
+        document.write(student + '<hr>');
+        delete(student.hobby);      // 기존 객체의 속성을 삭제
+        document.write(student + '<hr>');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
