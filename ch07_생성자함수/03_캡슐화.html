@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+        function Rect(width, height) {
+            if(width < 0) {
+                throw '음수길이';
+            }
+            // this를 쓰면 외부에서 접근이 가능하다
+            this.width = width;
+            this.height = height;
+        }
+        */
+        function Rect(w, h) {
+            // 외부에서 접근 못하게하기
+            var width = w;
+            var height = h;
+            this.getWidth = function() { return width; };
+            this.getHeight = function() { return height; };
+            this.setWidth = function(w) { width = w;};
+            this.setHeight = function(h) { height = h };
+        }
+
+        try {
+            var rect1 = new Rect(10,20);
+        } catch (error) {
+            location.href = '공사중.html';
+        }
+        //alert(rect1.width);
+        alert(rect1.getWidth());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
