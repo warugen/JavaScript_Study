@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str = 'abc@abc';
+        var patternNum = /[0-9]/;       // 정규표현식으로 나타낸 0부터9까지 숫자패턴
+        var patternEng = /[a-zA-Z]/;    // 정규표현식으로 나타낸 a부터z까지(대문자포함) 문자패턴
+        var patternKor = /[가-힣]/;     // 정규표현식으로 나타낸 가부터힣까지 한글 문자패턴
+        //var patternKor = /[가-힣ㄱ-ㅎㅏ-ㅣ]/;     // 정규표현식으로 나타낸 한글자음모음모두포함한 패턴
+        var patternSpe = /[~!@#$%^&*()_+|<>?:{}]/;
+
+        document.write('숫자가 포함되었는지 : ' + patternNum.test(str) + '<br>');
+        document.write('영문이 포함되었는지 : ' + patternEng.test(str) + '<br>');
+        document.write('한글 포함되었는지 : ' + patternKor.test(str) + '<br>');
+        document.write('특수문자가 포함되었는지 : ' + patternSpe.test(str) + '<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var num = 273.5503455;  // 2.7352*10의 2승 2.7352E+02
+        document.write(num.toExponential(5) + '<br>');      // 지수형으로 표현
+        document.write(num.toFixed(1)+'<br>');              // 소숫점 1자리까지
+        document.write(Math.round(num*10)/10+'<br>');       // 소숫점 1자리까지
+        document.write(num.toFixed(5)+'<br>');              // 원하는 소숫점까지
+        document.write(num.toPrecision(6) + '<br>');        // 수를 몇개까지 표시할건지
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

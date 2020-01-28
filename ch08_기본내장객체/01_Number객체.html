@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*  =====   Java 일때   ====
+        *   int primitiveNumber = 273;    // 순수데이터
+        *   primitiveNumber.toString() -> 불가
+        *   Integer objectNumber = new Integer(273);     // 객체데이터
+        */
+
+        // javascript는 둘다 객체데이터다
+        var primitiveNumber = 273;          // primitiveNumber = new Number(273)과 동일
+        var objectNumber = new Number(273);
+        //document.write(primitiveNumber.toString());
+        document.write('primitiveNumber의 타입은 ' + typeof(primitiveNumber) + '<br>');
+        document.write('objectNumber의 타입은 ' + typeof(objectNumber) + '<br>');
+        // constructor 생성자 함수
+        document.write('primitiveNumber 생성시 생성자 : ' + primitiveNumber.constructor + '<br>');
+        document.write('objectNumber 생성시 생성자 : ' + objectNumber.constructor + '<br>');
+
+        // Number 객체에 method1추가
+        Number.prototype.method1 = function() {
+            alert('Number타입은 다 쓸수있어!');
+        };
+        primitiveNumber.method1();
+        objectNumber.method1();
+
+        objectNumber.method2 = function() {
+            alert('objectNumber만 쓸수있어!');
+        }
+        objectNumber.method2();
+        //primitiveNumber.method2();  // 실행불가 objectNumber만 가능
+
+        primitiveNumber.method3 = function() {
+            alert('되나보자');
+        };
+        //primitiveNumber.method3();  // 타입이 object가 아니여가 속성 추가불가 objectNumber만 속성추가가능
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
