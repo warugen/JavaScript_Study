@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        table {
+            width: 330px;
+            height: 80px;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        var color = ['white','red','coral','yellow','green','blue','navy','purple'];
+        window.onload = function() {
+            var tds = document.querySelectorAll('td');
+            // 일반 for문은 가능하다
+            for (var idx = 0; idx < tds.length; idx++){
+                tds[idx].style.backgroundColor = color[idx+1];
+            }
+            // in for문은 잘 안됨
+            /* for(var idx in tds){
+                console.log(idx);
+                tds[idx].style.backgroundColor = color[idx];
+            } */
+        };
+
+        function change(n) {
+            document.body.style.backgroundColor = color[n];
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr onmouseout="change(0)">
+            <td onmouseover="change(1)"></td>
+            <td onmouseover="change(2)"></td >
+            <td onmouseover="change(3)"></td >
+            <td onmouseover="change(4)"></td >
+            <td onmouseover="change(5)"></td >
+            <td onmouseover="change(6)"></td >
+            <td onmouseover="change(7)"></td >
+        </tr>
+    </table>
+</body>
+</html>
