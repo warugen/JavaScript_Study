@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var clock = document.getElementsByClassName('clock'); // clock배열로 가져온다.
+            console.log(clock);
+            clock[0].innerHTML = new Date().toLocaleDateString();
+            clock[1].value = '시간 : '+new Date().toLocaleTimeString();
+            clock[1].style.fontSize = '2em';
+            setInterval(function() {
+                clock[1].value = '시간 : '+new Date().toLocaleTimeString();
+            },1000);
+        };
+    </script>
+</head>
+<body>
+    <h1 class="clock"></h1>
+    <input type="text" class="clock"/>
+</body>
+</html>

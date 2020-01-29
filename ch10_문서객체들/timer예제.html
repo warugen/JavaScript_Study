@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #time {
+            background-color: lightyellow;
+        }
+    </style>
+    <script>
+        /**
+            date에는 날짜를 window load시 한번 뿌리고
+            time에는 1초에 한번 시간을 뿌리도록 구현하시오
+        */
+        var colSet = ['red','orange','yellow','green','blue','navy','purple'];
+        var cnt = 0;
+        window.onload = function() {
+            var date = document.getElementById('date');
+            date.innerHTML = new Date().toLocaleDateString();
+            var time = document.getElementById('time');
+            time.style.color = 'red';
+            //h2.style.backgroundColor = 'yellow';
+            time.innerHTML = new Date().toLocaleTimeString();
+            setInterval(function(){
+                time.innerHTML = new Date().toLocaleTimeString();
+                time.style.color = colSet[cnt % 7];
+                cnt++;
+            },1000);
+        };
+
+    </script>
+</head>
+<body>
+    날짜 : <h2 id="date"></h2>
+    시간 : <h2 id="time"></h2>
+</body>
+</html>
