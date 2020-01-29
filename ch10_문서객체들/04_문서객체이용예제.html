@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var flag1 = true;
+        var flag2 = true;
+        //var h1 = document.getElementsByTagName('h1');         // getElementsByTagName 이용
+        //var h1 = document.getElementsByClassName('header');   // getElementsByClassName 이용
+        var h1;
+        var h2;
+        window.onload = function() {
+            h1 = document.getElementById('header1');
+            h2 = document.getElementById('header2');
+        }
+        function editH1() {
+            // getElementById 이용 왜 이건 전역번수로 못가져오나?
+            // onload되기전에 못가져온다....
+            //var h1 = document.getElementById('header1');        
+            if(flag1){
+                flag1 = false;
+                //h1[0].innerHTML = '바꿨다1';
+                h1.innerHTML = '바꿨다1';
+            } else {
+                flag1 = true;
+                //h1[0].innerHTML = 'HEADER1';
+                h1.innerHTML = 'HEADER1';
+            }
+        }
+
+        function editH2() {
+            //var h2 = document.getElementById('header2');
+            if(flag1){
+                flag1 = false;
+                //h1[1].innerHTML = '바꿨다2';
+                h2.innerHTML = '바꿨다2';
+            } else {
+                flag1 = true;
+                //h1[1].innerHTML = 'HEADER2';
+                h2.innerHTML = 'HEADER2';
+            }
+        }
+
+        /**
+        강사님 버전....
+        */
+        toggle = [0,0];
+        function change(num) {
+            var head = document.getElementsByTagName('h1');
+            if (toggle[num] == 0) {
+                head[num].innerHTML = '바꿔';
+                toggle[num] = 1;
+            }else {
+                head[num].innerHTML = 'HEADER';
+                toggle[num] = 0;
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1 id="header1" class="header">HEADER1</h1>
+    <h1 id="header2" class="header">HEADER2</h1>
+    
+    <button onclick="editH1()">header1 바꿔</button>
+    <button onclick="editH2()">header2 바꿔</button>
+    
+    <!-- 강사님 버전 -->
+    <!-- 
+    <button onclick="change(0)">header1 바꿔</button>
+    <button onclick="change(1)">header2 바꿔</button>
+    -->
+</body>
+</html>

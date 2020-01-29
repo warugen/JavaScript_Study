@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+             // .header 첫번째 하나만가져온다.
+            var header1 = document.querySelector('.header');   
+             // 해당 .header를 배열로 전부 가져온다.
+            var headers = document.querySelectorAll('.header');
+            header1.innerHTML = '바꿔';
+            for(var idx in headers){
+                headers[idx].style.color = 'red';
+                headers[idx].style.backgroundColor = 'yellow';
+                //headers[idx].style.cssText = 'color:blue;background-color:red';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1 class="header">HEADER</h1>
+    <h1 class="header">HEADER</h1>
+</body>
+</html>
