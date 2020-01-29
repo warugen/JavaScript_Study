@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var today = new Date();         // 1/29 오전 10 : 14분
+        var limitDay = new Date();
+
+        document.write('오늘 날짜 시간 : '+today.toLocaleString() + '<br>');
+        document.write('오늘 날짜 : '+today.toLocaleDateString()+ '<br>');
+        document.write('지금 시간 : '+today.toLocaleTimeString()+ '<br>');
+        limitDay.setDate(today.getDate() + 14);
+        document.write('2주후의 시점 : ' + limitDay.toLocaleString() + '<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

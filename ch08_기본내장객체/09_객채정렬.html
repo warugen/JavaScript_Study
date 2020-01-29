@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Student( name, k, eng, mat) {
+            this.name = name;
+            this.kor = k;
+            this.eng = eng;
+            this.mat = mat;
+        }
+
+        // prototype은 생성자를 만들어야지만 사용가능하다.
+        Student.prototype.getSum = function() {
+            return this.kor + this.eng + this.mat;
+        };
+        Student.prototype.toString = function(){
+            var output = ' '+this.name + ' : ' + this.kor + ' , ' + this.eng + ' , ' + 
+                            this.mat + ' , ' + this.getSum() + '<br>';
+            return output;
+        };
+
+        var students = [new Student('홍길동', 90, 80, 77),
+                        new Student('김길동', 100, 78, 87),
+                        new Student('고길동', 95, 98, 97) ];
+        
+        document.write('정렬 전 : '+students + '<br>');
+        students.sort(function(left, right){
+            return right.getSum() - left.getSum();  // 총점순으로 내림차순 정렬
+        });
+        document.write('총점순 정렬 : '+students + '<br>');
+
+        students.sort(function(left, right) {
+            return right.kor - left.kor;        // 국어점수 순으로 내림차순 정렬
+        })
+        document.write('국어점수순 정렬 : '+students + '<br>');
+
+        var s = students.slice(0,2);        // 0인덱스부터 2인덱스 앞까지
+        document.write('슬라이스된 s : '+ s + '<br>');
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
