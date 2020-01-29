@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function openWindow(){
+            var child = open('http://www.naver.com','childWin','width=300, height=200, left=100, top=100');
+            if(!child){
+                alert('팝업차단을 해재해 주세요');
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        폼태그에서는 input태그로 많이 사용한다.
+    <input type="button" value="버튼">
+    -->
+    <button onclick="openWindow()">새창열기 버튼</button>
+    <a href="http://daum.net" target="childWin">새창을 daum으로 가기</a>
+</body>
+</html>

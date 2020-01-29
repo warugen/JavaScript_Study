@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        
+        var child = window.open('06_.html','','width=300, height=400');
+        var w = screen.width / 2;
+        var h = screen.height / 2;
+        child.resizeTo(w,h);
+        child.moveTo(screen.width / 4, screen.height/4);
+
+        // 창 왔다갔다하기
+        var toggle = true;
+        setInterval(function() {
+            if(toggle) {
+                toggle = false;
+                child.moveBy(20,20);
+            } else {
+                toggle = true;
+                child.moveBy(-20,-20);
+            }
+        }, 500);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
