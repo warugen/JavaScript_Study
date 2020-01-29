@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var child = open('','','width=450, height=500');
+        /** window.open(속성1, 속성2, 속성3)
+         *  속성1 : url( 외부url || 내부경로 )
+         *  속성2 : window 이름
+         *  속성3 : width, height, location(1||0||yes||no), menubar=1||0, resiable=1||0, scrollba=1||0,
+         *          left(창의 왼쪽위치), top(창의 윗위치)
+        */
+
+        if(child){
+            child.document.write('<h1>새창</h1>');
+        } else {
+            alert('팝업창 차단을 해제하셔야 새창이 열립니다.');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
