@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var btnA = document.getElementById('btnA');
+            var btnB = document.getElementById('btnB');
+            var countA = document.getElementById('count-a');
+            var countB = document.getElementById('count-b');
+            // 버튼에 onclick이벤트 함수 등록
+            btnA.onclick = function() {
+                countA.innerHTML = Number(countA.innerHTML) + 1;
+                btnB.onclick(); // 이벤트 강제 실행
+            };
+
+            btnB.onclick = function() {
+                countB.innerHTML = Number(countB.innerHTML) + 1;
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btnA">Button A</button>
+    <button id="btnB">Button b</button>
+    <h1>Button A - <span id="count-a">0</span></h1>
+    <h1>Button B - <span id="count-b">0</span></h1>
+</body>
+</html>

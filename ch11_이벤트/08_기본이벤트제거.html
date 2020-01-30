@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            document.getElementById('myForm').onsubmit = function() {
+                var pw = document.getElementById('pw');
+                var pwChk = document.getElementById('pwChk');
+                // console.log(pw.value);
+                // console.log(pwChk.value);
+                if (pw.value != pwChk.value) {
+                    alert('비밀번호가 다릅니다. 다시 확인해주세요.');
+                    pw.value = '';
+                    pwChk.value = '';
+                    return false;   // 디폴트 이벤트 제한
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <form action="#" id="myForm" >
+        <p>ID <input type="text" name="id" id="id"></p>
+        <p>PW <input type="password" name="pw" id="pw"></p>
+        <p>PW <input type="password" name="pwChk" id="pwChk"></p>
+        <p> <input type="submit" ></p>
+    </form>
+</body>
+</html>

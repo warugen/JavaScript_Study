@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        table {
+            margin-top: 20px;
+            text-align: center;
+            background-color: darkgreen;
+        }
+        td {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+                var tds = document.getElementsByTagName('td');
+                var cursor = 0;
+                tds[cursor].style.backgroundColor = 'yellow';
+            window.onkeyup = function() {
+                switch (event.keyCode) {
+                    case 37: //좌
+                    //alert('37');
+                    if(cursor % 3 != 0){
+                        cursor -= 1;
+                    } else {
+                        cursor += 2;
+                    }
+                    break;
+                    case 38: //상
+                    if (cursor < 3) {
+                        cursor += 6;
+                    } else {
+                        cursor -= 3;
+                    }
+                    break;
+                    case 39: //우
+                    if (cursor %3 == 2) {
+                        cursor -= 2;
+                    } else {
+                        cursor += 1;
+                    }
+                    break;
+                    case 40: //하
+                    if(cursor >=6){
+                        cursor -= 6;
+                    } else {
+                        cursor += 3;
+                    }
+                    
+                    break;
+                
+                    default:
+                        break;
+                }
+                for(var idx =0; idx < tds.length; idx++){
+                    tds[idx].style.backgroundColor = 'white';    
+                }
+                tds[cursor].style.backgroundColor = 'yellow';
+            }
+        };
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
+</body>
+</html>

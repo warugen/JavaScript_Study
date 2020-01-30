@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        table {
+            margin-top: 20px;
+            text-align: center;
+            background-color: darkgreen;
+        }
+        td {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var tdTag = document.getElementsByTagName('td');
+            var start = 0;
+            window.onkeyup = function() {
+                if (event.keyCode == 83) {
+                    start = 1;
+                }
+                if (start ==1 ){
+                    switch (Number(event.keyCode)) {
+                        case 96: case 48:
+                            change(0);
+                            break;
+                        case 97: case 49:
+                            change(1);
+                            break;
+                        case 98: case 50:
+                            change(2);
+                            break;
+                        case 99: case 51:
+                            change(3);
+                            break;
+                        case 100: case 52:
+                            change(4);
+                            break;
+                        case 101: case 53:
+                            change(5);
+                            break;
+                        case 102: case 54:
+                            change(6);
+                            break;
+                        case 103: case 55:
+                            change(7);
+                            break;
+                        case 104: case 56:
+                            change(8);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            };
+            
+            function change(n) {
+                for(var idx =0; idx < tdTag.length; idx++){
+                    tdTag[idx].style.backgroundColor = 'white';    
+                }
+                tdTag[n].style.backgroundColor = 'yellow';
+            }
+        };
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
+</body>
+</html>
