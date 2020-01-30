@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            document.getElementById('header').onclick = function() {
+                // this 는 자기자신인 document.getElementById('header')을 가리킨다.
+                // alert(this.innerHTML);
+                this.style.color = 'yellow';
+                this.style.border = '1px solid red'
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Click</h1>
+</body>
+</html>
