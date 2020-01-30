@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function openChk() {
+            var id = document.getElementById('id');
+            if(id.value == ''){
+                alert('아이디를 입력해주세요.');
+                return false;
+            }
+            var child = open('10_confirm.html','중복체크','width=300, height=100, left=100, top=100');
+            if(!child){
+                alert('팝업차단을 해제해 주세요.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>아이디 <input type="text" name="id" id="id"> <button onclick="openChk();">중복확인</button></p>
+        
+    </div>
+</body>
+</html>

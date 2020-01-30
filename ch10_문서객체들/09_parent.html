@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid lightpink;
+            text-align: center;
+        }
+        #wrap p {
+            text-align: center;
+        }
+        #wrap input, #wrap span {
+            width: 150px;
+            height: 20px;
+            border: 1px solid pink;
+            display: inline-block;
+        }
+        h2 {
+            width: 250px;
+            padding: 50px auto;
+            margin: 30px 15px;
+            border: 1px solid lightcoral;
+            background-color: lightpink;
+            border-radius: 10px 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var child;
+        function childOpen() {
+            child = open('09_child.html','인사정보선택','width=500, height=600, left=100, top=100');
+            if(!child){
+                alert('팝업차단을 해제해 주세요.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- child윈도우와 값을 넘겨줄때는 id로만 넘어간다 -->
+        <p>사원이름 <input type="text" name="name" id="name"></p>
+        <p>파트명칭 <span id="part"></span></p>
+        <p>결제일자 <input type="date" name="date" id="date"></p>
+        <h2 id="insa" onclick="childOpen()">인사정보 파트선택</h2>
+    </div>
+</body>
+</html>

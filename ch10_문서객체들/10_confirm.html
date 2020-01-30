@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 290px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var id = opener.document.getElementById('id').value;
+            var chkid = document.getElementById('chkid');
+            chkid.value = id;
+        };
+        function chk() {
+            alert('jsp수업이후 추가예정');
+        }
+        function confirm() {
+            var chkid = document.getElementById('chkid').value;
+            if(chkid == ''){
+                alert('아이디를 입력해주세요.');
+                return false;
+            }
+            opener.document.getElementById('id').value = chkid;
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>ID <input type="text" name="chkid" id="chkid"> <button onclick="chk();">체크</button></p>
+        <button onclick="confirm();">아이디 사용</button>
+    </div>
+</body>
+</html>
