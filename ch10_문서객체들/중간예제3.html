@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 430px;
+            height: 200px;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        var color = ['white','red','orange','yellow','green','blue','navy','purple'];
+        var colorName = ['하얀색','빨강색','주황색','노랑색','초록색','파랑색','남색','보라색'];
+        window.onload = function() {
+            var tds = document.getElementsByTagName('td');
+            console.log(tds);
+            for (var idx = 0; idx < tds.length; idx++){
+                tds[idx].style.backgroundColor = color[idx+1];
+            }
+        };
+
+        function change(n) {
+            if(n == 0) {
+                //document.body.style.backgroundColor = color[0];
+                var header = document.getElementsByTagName('h2');
+                for (var idx=header.length-1; idx => 0; idx--){
+                    document.body.removeChild(header[idx]);
+                } 
+            } else {
+                var h2 = document.createElement('h2');
+                var textNode = document.createTextNode(colorName[n]+'을 선택했다.');
+                h2.appendChild(textNode);
+                h2.style.color = color[n];
+                h2.style.textAlign = 'center';
+                document.body.appendChild(h2);
+                //document.body.innerHTML += '<h2>'+colorName[n]+'을 선택했다.</h2>';
+                /* var h2 = document.getElementById('h2');
+                h2.innerHTML = colorName[n]+'을 선택했다.';
+                h2.style.color = color[n]; */
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr onmouseout="change(0)">
+            <td onmouseover="change(1)"></td>
+            <td onmouseover="change(2)"></td >
+            <td onmouseover="change(3)"></td >
+            <td onmouseover="change(4)"></td >
+            <td onmouseover="change(5)"></td >
+            <td onmouseover="change(6)"></td >
+            <td onmouseover="change(7)"></td >
+        </tr>
+    </table>
+    <h2 id="h2"></h2>
+</body>
+</html>

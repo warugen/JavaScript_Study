@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function remove() {
+            //var header = document.getElementById('header');
+            var header = document.getElementsByTagName('h1');
+
+            for (var idx=header.length-1; idx => 0; idx--){
+                document.body.removeChild(header[idx]);
+                console.log(idx);
+            }
+        }
+        function append(){
+            /* var h1 = document.createElement('h1');
+            var textNode = document.createTextNode('추가한 HEADER');
+            h1.appendChild(textNode);
+            document.body.appendChild(h1); */
+            document.body.innerHTML += '<h1>HEADER</h1>';
+        }
+    </script>
+</head>
+<body>
+    <button onclick="remove()">header 다 없애기</button>
+    <button onclick="append()">header하나 추가하기</button>
+    <h1 id="header">HEADER</h1>
+</body>
+</html>

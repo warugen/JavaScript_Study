@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        function header(n){
+            if(n==1){
+                var header1 = document.getElementById('header-1');
+                header1.style.border = '2px solid blue';
+                header1.style.backgroundColor = 'lightyellow';
+            } else {
+                var header2 = document.getElementById('header-2');
+                header2.style.cssText = 'color : orange; font-size : 1.5em;';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2 id="header-1" onclick="header(1)">HEADER</h2>
+    <h2 id="header-2" onclick="header(2)">HEADER</h2>
+</body>
+</html>
